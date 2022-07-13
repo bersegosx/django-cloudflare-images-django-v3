@@ -8,8 +8,10 @@ from django.core.files.base import ContentFile
 from django.core.files.storage import Storage
 from cloudflare_images.service import CloudflareImagesService
 from cloudflare_images.config import Config
+from django.utils.deconstruct import deconstructible
 
 
+@deconstructible
 class CloudflareImagesStorage(Storage):
     """
     Django storage for Cloudflare Images
